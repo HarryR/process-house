@@ -1,0 +1,9 @@
+[submodule "confluence-psql"]
+	path = confluence-psql
+	url = https://github.com/HarryR/postgresql-container.git
+[submodule "jira-psql"]
+	path = jira-psql
+	url = https://github.com/HarryR/postgresql-container.git
+[submodule "0bin"]
+	path = 0bin
+	url = https://github.com/HarryR/0bin.git
