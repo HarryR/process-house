@@ -25,3 +25,6 @@ destroy:
 
 create: var logs
 	docker run -d --name $(NAME) --publish "8090:8090" --restart=unless-stopped -v `pwd`/var:/var/atlassian/confluence -v `pwd`/logs:/opt/atlassian/confluence/logs --link=confluence-psql -ti $(CONTAINER)
+
+backup: var logs
+	../backup.sh $+

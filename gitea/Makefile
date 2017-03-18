@@ -24,3 +24,6 @@ destroy:
 
 create: data
 	docker run -d --name $(NAME) -p 3022:22 -p "3000:3000" --restart unless-stopped -v `pwd`/data:/data  -ti $(CONTAINER)
+
+backup: data
+	../backup.sh $+

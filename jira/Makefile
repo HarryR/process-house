@@ -25,3 +25,6 @@ destroy:
 
 create: var logs
 	docker run -d --name $(NAME) --publish "8080:8080" --restart unless-stopped -v `pwd`/var:/var/atlassian/jira -v `pwd`/logs:/opt/atlassian/jira/logs --link=jira-psql -ti $(CONTAINER)
+
+backup: var logs
+	../backup.sh $+

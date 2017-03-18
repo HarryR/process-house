@@ -1,10 +1,11 @@
-CONTAINER=nodered/node-red-docker
+CONTAINER=nodered/node-red-docker:slim
 NAME=nodered
 
 all: data
 
 data:
 	mkdir -p $@
+	chmod 777 data
 
 start:
 	docker start $(NAME)
@@ -17,3 +18,6 @@ destroy:
 
 create: data
 	docker run -d --name $(NAME) --publish "1880:1880" --restart unless-stopped -v `pwd`/data:/data -ti $(CONTAINER)
+
+backup: data
+	../backup.sh $+

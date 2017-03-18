@@ -11,3 +11,6 @@ stop:
 
 destroy:
 	@for MOD in $(MODULES); do make -C $$MOD $@; done
+
+backup:
+	@for MOD in $(MODULES); do make -C $$MOD $@; done
